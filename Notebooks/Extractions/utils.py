@@ -17,7 +17,7 @@ def move_to_thz_tds_directory(max_levels=10):
         levels_moved = 0
 
         # Loop until the path ends with 'THz-TDS' or we've moved up too many levels
-        while not current_path.endswith('THz-TDS'):
+        while not current_path.endswith('THz-TDS-Archive'):
             # If we've moved up more than max_levels, raise an error
             if levels_moved >= max_levels:
                 raise FileNotFoundError(f"'THz-TDS' directory not found within {max_levels} levels of the current directory.")

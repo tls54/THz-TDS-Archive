@@ -5,7 +5,7 @@ import numpy as np
 
 def plot_time_domain(time_ref, signal_ref, time_sample, signal_sample):
     # Plot the time signals
-    plt.figure(figsize=(8,4), dpi=150)
+    plt.figure(figsize=(12,4), dpi=150)
     plt.plot(time_ref, signal_ref, label="Reference Signal")
     plt.plot(time_sample, signal_sample, label="Sample Signal")
     plt.title('Signals in time domain')
@@ -18,13 +18,13 @@ def plot_time_domain(time_ref, signal_ref, time_sample, signal_sample):
 
 def plot_frequency_domain(f_interp, A_signal_ref, ph_signal_ref, A_signal_sample, ph_signal_sample, x_lims=[0, 4]):
     # Create a tiled layout for plotting amplitude and phase
-    fig, axs = plt.subplots(2, 1, figsize=(8, 6))
+    fig, axs = plt.subplots(2, 1, figsize=(12, 8))
 
     # Plot amplitude spectrum
     axs[0].plot(f_interp, A_signal_ref, label='Reference Amplitude')
     axs[0].plot(f_interp, A_signal_sample, label='Sample Amplitude')
     axs[0].set_xlim(x_lims)
-    axs[0].set_title('Fourier transform of Signals')
+    axs[0].set_title('Fourier transform THz Time Domain Scan')
     axs[0].set_ylabel('Amplitude')
     axs[0].legend()
 
@@ -52,7 +52,7 @@ def plot_frequency_domain(f_interp, A_signal_ref, ph_signal_ref, A_signal_sample
 
 def plot_refractive_index(f_interp, n_extracted):
     """Plot the real and imaginary parts of the refractive index."""
-    fig2, axs2 = plt.subplots(2, 1, figsize=(12, 6))
+    fig2, axs2 = plt.subplots(2, 1, figsize=(12, 8))
 
     # Plot real part of refractive index
     axs2[0].plot(f_interp, np.real(n_extracted))
